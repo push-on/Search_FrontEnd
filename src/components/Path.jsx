@@ -6,10 +6,13 @@ export const Path = () => {
     <div className='p-4'>
       <Routes>
         <Route path='/' element={<Navigate to="/search" />} />
-        {['/search', '/images', '/news', '/videos']?.map((item) => {
+        {/* {['/search', '/images', '/news', '/videos']?.map((item) => {
           return <Route path={item} element={<Results />} />
-        })}
-
+        })} */}
+        <Route path='/search' element={<Results />} />
+        <Route path='/images' element={<Results />} />
+        <Route path='/news' element={<Results />} />
+        <Route path='/videos' element={<Results />} />
       </Routes>
     </div>
   )

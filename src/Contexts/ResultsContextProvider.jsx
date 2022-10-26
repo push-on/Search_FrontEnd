@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState } from 'react'
 
 const ResultContext = createContext()
-const baseUrl = 'https://bing-web-search1.p.rapidapi.com/search'
-const apiKey = '44aed2df67mshad4428dbd67b312p15ff4cjsn2870ce60fc6f'
+const baseUrl = 'https://bing-web-search1.p.rapidapi.com'
+// const apiKey = '44aed2df67mshad4428dbd67b312p15ff4cjsn2870ce60fc6f'
 
 export const ResultsContextProvider = ({ children }) => {
   const [results, setResults] = useState([])
