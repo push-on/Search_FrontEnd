@@ -7,11 +7,11 @@ import { ResultContextProvider } from "./contexts/ResultContextProvider"
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <ResultContextProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </ResultContextProvider>
-  // </React.StrictMode>
+  </React.StrictMode>
 )

@@ -8,12 +8,11 @@ import { Loading } from './Loading'
 export const Results = () => {
   const { getResults, results, searchTerm, setSearchTerm, isLoading } = useResultContext()
   const location = useLocation()
-  
-  // useEffect(() => {
-  //   getResults(`/search/q=hello`)
-  // }, [])
+  useEffect(() => {
+    getResults('/search?q=hello')
+  }, [])
 
-  // let loading = true
+// isLoading = true
   if (isLoading) return <Loading />
 
   switch (location.pathname) {

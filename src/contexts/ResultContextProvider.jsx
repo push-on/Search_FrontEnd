@@ -19,6 +19,7 @@ export const ResultContextProvider = ({ children }) => {
     })
     const data = await response.json()
     setResults(data)
+    console.log(data);
     setIsloading(false)
   }
   return (
@@ -28,4 +29,4 @@ export const ResultContextProvider = ({ children }) => {
   )
 }
 
-export const useResultContext = () => createContext(ResultContext)
+export const useResultContext = () => useContext(ResultContext)
