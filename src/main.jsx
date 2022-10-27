@@ -2,15 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-import { ResultsContextProvider } from "./Contexts/ResultsContextProvider"
 import { BrowserRouter } from "react-router-dom"
+import { ResultContextProvider } from "./contexts/ResultContextProvider"
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ResultsContextProvider>
-    <BrowserRouter>
-      <React.StrictMode>
+  // <React.StrictMode>
+    <ResultContextProvider>
+      <BrowserRouter>
         <App />
-      </React.StrictMode>
-    </BrowserRouter>
-  </ResultsContextProvider>
+      </BrowserRouter>
+    </ResultContextProvider>
+  // </React.StrictMode>
 )

@@ -1,23 +1,39 @@
+import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { useResultContext } from '../Contexts/ResultsContextProvider'
+import ReactPlayer from 'react-player'
+
+import { useResultContext } from '../contexts/ResultContextProvider'
 import { Loading } from './Loading'
+
 export const Results = () => {
-  const { results, getResults, isLoading, searchTerm } = useResultContext
+  const { getResults, results, searchTerm, setSearchTerm, isLoading } = useResultContext()
+  const location = useLocation()
+  
+  // useEffect(() => {
+  //   getResults(`/search/q=hello`)
+  // }, [])
+
+  // let loading = true
   if (isLoading) return <Loading />
 
-  
-  const location = useLocation()
   switch (location.pathname) {
-    // '/search', '/images', '/news', '/videos'
     case '/search':
-      return 'SEARCH'
+      return (
+        '/search'
+      )
     case '/images':
-      return 'Images'
+      return (
+        '/images'
+      )
     case '/news':
-      return 'News'
+      return (
+        '/news'
+      )
     case '/videos':
-      return 'Videos'
+      return (
+        '/videos'
+      )
     default:
-      return 'ERROR!'
+      return 'Error...'
   }
 }
