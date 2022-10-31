@@ -1,8 +1,8 @@
-import React from 'react'
-import { Oval } from 'react-loader-spinner'
+import React from "react";
+import { Oval } from "react-loader-spinner";
 export const Loading = () => {
   return (
-    <div className='flex justify-center items-center'>
+    <div className="flex justify-center items-center">
       <Oval
         height={50}
         width={50}
@@ -10,11 +10,11 @@ export const Loading = () => {
         wrapperStyle={{}}
         wrapperClass=""
         visible={true}
-        ariaLabel='oval-loading'
+        ariaLabel="oval-loading"
         secondaryColor="#475569"
         strokeWidth={5}
         strokeWidthSecondary={5}
       />
     </div>
-  )
-}
+  );
+};
