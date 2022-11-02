@@ -4,7 +4,7 @@ const ResultContext = createContext();
 export const ResultContextProvider = ({ children }) => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsloading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("cats");
+  const [searchTerm, setSearchTerm] = useState("car");
 
   const getResults = async (baseUrl, type) => {
     setIsloading(true);
