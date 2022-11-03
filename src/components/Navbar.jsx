@@ -16,7 +16,6 @@ export const Navbar = ({ darkTheme, setDarkTheme }) => {
               <div >
                 🔎
               </div>
-
             </div>
           </Link>
           <Search />
