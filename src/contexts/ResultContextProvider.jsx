@@ -4,14 +4,14 @@ const ResultContext = createContext();
 export const ResultContextProvider = ({ children }) => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsloading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("car");
+  const [searchTerm, setSearchTerm] = useState("Tesla Model S");
 
   const getResults = async (baseUrl, type) => {
     setIsloading(true);
     const response = await fetch(`${baseUrl}${type}`, {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "44aed2df67mshad4428dbd67b312p15ff4cjsn2870ce60fc6f",
+        "X-RapidAPI-Key": import.meta.env.VITE_KEY,
       }
     });
     const data = await response.json();
