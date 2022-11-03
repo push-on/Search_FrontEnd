@@ -8,7 +8,7 @@ export default function App() {
   const [darkTheme, setDarkTheme] = useState(true);
   return (
     <div className={darkTheme ? "dark" : ""}>
-      <div className="bg-slate-100 dark:bg-slate-900 dark:text-slate-100 min-h-screen">
+      <div className="bg-slate-100 dark:bg-slate-900 dark:text-slate-100 h-screen w-screen overflow-auto">
         <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
         <Path />
         <Pagination />
