@@ -5,7 +5,7 @@ import { useResultContext } from "../contexts/ResultContextProvider";
 import { Loading } from "./Loading";
 
 export const Results = () => {
-  const { getResults, results, searchTerm, setSearchTerm, isLoading } = useResultContext();
+  const { getResults, results, searchTerm, isLoading } = useResultContext();
   const location = useLocation();
 
   let baseUrl = "";
@@ -38,7 +38,7 @@ export const Results = () => {
         <div className="flex justify-center">
           <div className="flex flex-col sm:w-[650px]">
             {results?.webPages?.value?.map(({ name, url, snippet }, index) => (
-              <div key={index} className=" w-2xl p-3 rounded-lg transition ease-in-out hover:bg-slate-800">
+              <div key={index} className=" w-2xl p-3 rounded-lg transition ease-in-out dark:hover:bg-slate-800 hover:bg-slate-300">
                 <a href={url} target="_blank" rel="noreferrer" >
                   <p className="font-semibold text-lg hover:underline underline-offset-4 dark:text-blue-300 text-blue-600">
                     {name}
@@ -47,7 +47,7 @@ export const Results = () => {
                 <p className="text-sm italic">
                   {url?.length > 30 ? url?.substring(0, 30) : url}
                 </p>
-                <p className="text-justify cursor-text	text-sm text-slate-600 dark:text-slate-400">{snippet}</p>
+                <p className="text-justify cursor-text text-sm text-slate-600 dark:text-slate-400">{snippet}</p>
               </div>
             ))}
           </div>
@@ -71,26 +71,26 @@ export const Results = () => {
         <div className="flex justify-center ">
 
           <div className="flex flex-col sm:w-[650px]">
-          {results?.value?.map(({ name, url, description, image }, index) => (
-            <div key={index} className="flex w-2xl p-3 rounded-lg transition ease-in-out hover:bg-slate-800">
-              <div className="container  w-32 pt-2">
-                <img className=" object-fill object-center rounded-md bg-slate-200 dark:bg-slate-900" src={image?.thumbnail?.contentUrl} alt="" />
-              </div>
-              <div className="container">
-                <a href={url} target="_blank" rel="noreferrer" >
-                  <p className="font-semibold text-lg hover:underline underline-offset-4 dark:text-blue-300 text-blue-600">
-                    {name}
+            {results?.value?.map(({ name, url, description, image }, index) => (
+              <div key={index} className="flex w-2xl p-3 rounded-lg transition ease-in-out dark:hover:bg-slate-800 hover:bg-slate-300">
+                <div className="container  w-32 pt-2">
+                  <img className=" object-fill object-center rounded-md bg-slate-200 dark:bg-slate-900" src={image?.thumbnail?.contentUrl} alt="" />
+                </div>
+                <div className="container">
+                  <a href={url} target="_blank" rel="noreferrer" >
+                    <p className="font-semibold text-lg hover:underline underline-offset-4 dark:text-blue-300 text-blue-600">
+                      {name}
+                    </p>
+                  </a>
+                  <p className="text-sm italic">
+                    {url?.length > 50 ? url?.substring(0, 50) : url}
                   </p>
-                </a>
-                <p className="text-sm italic">
-                  {url?.length > 50 ? url?.substring(0, 50) : url}
-                </p>
-                <p className="text-justify cursor-text	text-sm text-slate-600 dark:text-slate-400">{description}</p>
+                  <p className="text-justify cursor-text	text-sm text-slate-600 dark:text-slate-400">{description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
-          </div>
+        </div>
       );
     case "/videos":
       return (
