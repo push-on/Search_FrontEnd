@@ -38,7 +38,7 @@ export const Results = () => {
         <div className="flex justify-center">
           <div className="flex flex-col sm:w-[650px]">
             {results?.webPages?.value?.map(({ name, url, snippet }, index) => (
-              <div key={index} className=" w-2xl p-3 rounded-lg transition ease-in-out dark:hover:bg-slate-800 hover:bg-slate-300">
+              <div key={index} className=" w-2xl p-3 rounded-lg transition ease-in-out dark:hover:bg-slate-800 hover:bg-slate-200">
                 <a href={url} target="_blank" rel="noreferrer" >
                   <p className="font-semibold text-lg hover:underline underline-offset-4 dark:text-blue-300 text-blue-600">
                     {name}
@@ -72,7 +72,7 @@ export const Results = () => {
 
           <div className="flex flex-col sm:w-[650px]">
             {results?.value?.map(({ name, url, description, image }, index) => (
-              <div key={index} className="flex w-2xl p-3 rounded-lg transition ease-in-out dark:hover:bg-slate-800 hover:bg-slate-300">
+              <div key={index} className="flex w-2xl p-3 rounded-lg transition ease-in-out dark:hover:bg-slate-800 hover:bg-slate-200">
                 <div className="container  w-32 pt-2">
                   <img className=" object-fill object-center rounded-md bg-slate-200 dark:bg-slate-900" src={image?.thumbnail?.contentUrl} alt="" />
                 </div>
