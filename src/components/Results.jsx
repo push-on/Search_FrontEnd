@@ -35,20 +35,22 @@ export const Results = () => {
   switch (location.pathname) {
     case "/search":
       return (
-        <div className="flex flex-col items-center">
-          {results?.webPages?.value?.map(({ name, url, snippet }, index) => (
-            <div key={index} className="max-w-2xl pb-1">
-              <a href={url} target="_blank" rel="noreferrer" >
-                <p className="font-semibold text-lg hover:underline underline-offset-4 dark:text-blue-300 text-blue-600">
-                  {name}
+        <div className="flex justify-center">
+          <div className="flex flex-col sm:w-[650px]">
+            {results?.webPages?.value?.map(({ name, url, snippet }, index) => (
+              <div key={index} className=" w-2xl p-3 rounded-lg transition ease-in-out hover:bg-slate-800">
+                <a href={url} target="_blank" rel="noreferrer" >
+                  <p className="font-semibold text-lg hover:underline underline-offset-4 dark:text-blue-300 text-blue-600">
+                    {name}
+                  </p>
+                </a>
+                <p className="text-sm italic">
+                  {url?.length > 30 ? url?.substring(0, 30) : url}
                 </p>
-              </a>
-              <p className="text-sm italic">
-                {url?.length > 30 ? url?.substring(0, 30) : url}
-              </p>
-              <p className="text-justify cursor-text	text-sm text-slate-600 dark:text-slate-400">{snippet}</p>
-            </div>
-          ))}
+                <p className="text-justify cursor-text	text-sm text-slate-600 dark:text-slate-400">{snippet}</p>
+              </div>
+            ))}
+          </div>
         </div>
       );
     case "/images":
@@ -66,9 +68,11 @@ export const Results = () => {
       );
     case "/news":
       return (
-        <div className="flex flex-col items-center">
+        <div className="flex justify-center ">
+
+          <div className="flex flex-col sm:w-[650px]">
           {results?.value?.map(({ name, url, description, image }, index) => (
-            <div key={index} className="flex max-w-2xl pb-1">
+            <div key={index} className="flex w-2xl p-3 rounded-lg transition ease-in-out hover:bg-slate-800">
               <div className="container  w-32 pt-2">
                 <img className=" object-fill object-center rounded-md bg-slate-200 dark:bg-slate-900" src={image?.thumbnail?.contentUrl} alt="" />
               </div>
@@ -85,7 +89,8 @@ export const Results = () => {
               </div>
             </div>
           ))}
-        </div>
+          </div>
+          </div>
       );
     case "/videos":
       return (

@@ -12,7 +12,7 @@ export const Search = () => {
   }, [debouncedValue]);
 
   return (
-    <div className="flex" >
+    <div className="relative" >
       <input
         value={text}
         type="text"
@@ -22,11 +22,11 @@ export const Search = () => {
 
       />
 
-      {/* {text && (
-        <button type="button" onClick={() => setText('')} className=" m-2 text-2xl border text-slate-500">
-          ✖️
+      {text && (
+        <button type="button" onClick={() => setText('')} className="h-8 w-8 absolute right-1 inset-y-0 m-2 text-xl dark:hover:bg-slate-700 dark:hover:rounded-full text-slate-500 ">
+          ✕
         </button>
-      )} */}
+      )}
     </div>
   );
 };
