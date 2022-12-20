@@ -2,8 +2,8 @@ import React from "react";
 
 const today = new Date();
 const yyyy = today.getFullYear();
-let mm = today.toLocaleString("default", { month: "short" });
-let dd = today.getDate();
+const mm = today.toLocaleString("default", { month: "short" });
+const dd = today.getDate();
 const formattedToday = dd + " - " + mm + " - " + yyyy;
 
 export const Footer = () => {

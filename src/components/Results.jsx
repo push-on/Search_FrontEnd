@@ -1,36 +1,35 @@
-import React, { useEffect, useInsertionEffect } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect, useInsertionEffect } from "react"
+import { useLocation } from "react-router-dom"
 
-import { useResultContext } from "../contexts/ResultContextProvider";
-import { Loading } from "./Loading";
+import { useResultContext } from "../contexts/ResultContextProvider"
+import { Loading } from "./Loading"
 
 export const Results = () => {
-  const { getResults, results, searchTerm, isLoading } = useResultContext();
-  const location = useLocation();
+  const { getResults, results, searchTerm, isLoading } = useResultContext()
+  const location = useLocation()
 
-  let baseUrl = "";
+  let baseUrl = ""
   switch (location.pathname) {
     case "/search":
-      baseUrl = "https://bing-web-search1.p.rapidapi.com";
-      break;
+      baseUrl = "https://bing-web-search1.p.rapidapi.com"
+      break
     case "/images":
-      baseUrl = "https://bing-image-search1.p.rapidapi.com/images";
-      break;
+      baseUrl = "https://bing-image-search1.p.rapidapi.com/images"
+      break
     case "/news":
-      baseUrl = "https://bing-news-search1.p.rapidapi.com/news";
-      break;
+      baseUrl = "https://bing-news-search1.p.rapidapi.com/news"
+      break
     case "/videos":
-      baseUrl = "https://bing-video-search1.p.rapidapi.com/videos";
-      break;
+      baseUrl = "https://bing-video-search1.p.rapidapi.com/videos"
+      break
     default:
-      baseUrl = "https://bing-web-search1.p.rapidapi.com";
+      baseUrl = "https://bing-web-search1.p.rapidapi.com"
   }
   useEffect(() => {
-    getResults(baseUrl, `/search?q=${searchTerm}`);
-  }, [searchTerm, location.pathname]);
+    getResults(baseUrl, `/search?q=${searchTerm}`)
+  }, [searchTerm, location.pathname])
 
-  if (isLoading) return <Loading />;
-  // console.log(results);
+  if (isLoading) { return <Loading /> }
 
   switch (location.pathname) {
     case "/search":
@@ -52,7 +51,7 @@ export const Results = () => {
             ))}
           </div>
         </div>
-      );
+      )
     case "/images":
       return (
         <div className="flex flex-wrap justify-center">
@@ -65,7 +64,7 @@ export const Results = () => {
             </a>
           ))}
         </div>
-      );
+      )
     case "/news":
       return (
         <div className="flex justify-center ">
@@ -91,7 +90,7 @@ export const Results = () => {
             ))}
           </div>
         </div>
-      );
+      )
     case "/videos":
       return (
         <div className="flex flex-wrap justify-center">
@@ -104,8 +103,8 @@ export const Results = () => {
             </a>
           ))}
         </div>
-      );
+      )
     default:
-      return "Error";
+      return "Error"
   }
-};
+}

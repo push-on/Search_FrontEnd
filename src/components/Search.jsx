@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { useDebounce } from "use-debounce";
-import { useResultContext } from "../contexts/ResultContextProvider";
+import React, { useState, useEffect } from "react"
+import { useDebounce } from "use-debounce"
+import { useResultContext } from "../contexts/ResultContextProvider"
 
 export const Search = () => {
-  const [text, setText] = useState('Tesla Model S');
-  const { setSearchTerm } = useResultContext();
-  const [debouncedValue] = useDebounce(text, 500);
+  const [text, setText] = useState('Tesla Model S')
+  const { setSearchTerm } = useResultContext()
+  const [debouncedValue] = useDebounce(text, 500)
 
   useEffect(() => {
-    if (debouncedValue) setSearchTerm(debouncedValue);
-  }, [debouncedValue]);
+    if (debouncedValue) { setSearchTerm(debouncedValue) }
+  }, [debouncedValue])
 
   return (
     <div className="relative" >
@@ -26,5 +26,5 @@ export const Search = () => {
         </button>
       )}
     </div>
-  );
-};
+  )
+}
